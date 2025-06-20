@@ -43,6 +43,12 @@ jobs:
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ env.DOCKER_PASSWORD }}
 
+      - name: Print Docker envs
+        run: |
+          echo "DOCKER_USERNAME=${{ env.DOCKER_USERNAME }}"
+          echo "DOCKER_REPOSITORY=${{ env.DOCKER_REPOSITORY }}"
+          echo "IMAGE_TAG=${{ env.IMAGE_TAG }}"
+
       # image build 및 push
       - name: docker build and push
         uses: docker/build-push-action@v5.1.0
