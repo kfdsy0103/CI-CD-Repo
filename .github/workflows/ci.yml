@@ -40,8 +40,8 @@ jobs:
       # develop 브랜치와의 병합 시뮬레이션
       - name: Test merge ability with main branch
         run: |
-          git fetch origin develop
-          git merge origin/develop --no-commit --no-ff || { echo "현재 브랜치는 main 브랜치와 병합시 conflict가 발생합니다."; exit 1; }
+          git fetch origin main
+          git merge origin/main --no-commit --no-ff || { echo "현재 브랜치는 main 브랜치와 병합시 conflict가 발생합니다."; exit 1; }
 
       # 병합 시뮬레이션 후 빌드 테스트
       - name: Build jar
